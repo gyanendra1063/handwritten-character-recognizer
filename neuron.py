@@ -55,6 +55,8 @@ class neuron:
 		return self.__outpt
 	def getDelta(self):
 		return self.__delta
+	def getWs(self):
+		return self.__weight
 #Perceptron class is done 
 #last modified 7 april 1:41 am
 #by zyan7
