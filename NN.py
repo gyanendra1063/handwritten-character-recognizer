@@ -4,8 +4,8 @@ import sys, os
 import picture
 import neuron
 
-firstLayer = 8
-hiddenLayer = 11
+firstLayer = 25
+hiddenLayer = 20
 lastLayer = 10
 lamda = 0.5
 directory = "./training_set/"	#training directory
@@ -30,6 +30,7 @@ def build_N_learn(lamda):
 
 		iteration = iteration+1
 		TotalErr = 0
+
 		for k in imageVectors.keys():
 			for i in range(firstLayer):
 				if len(inputNeurons) < firstLayer:
@@ -116,7 +117,8 @@ def test_NN():
 		p = picture.Pic(os.path.join(directoryTest, n))
 		filename = n.split(".")
 		imageVectors[filename[0]] = p.getVector()
-
+	for i in range(firstLayer):
+		print inputNeurons[i].getWs()
 	for k in imageVectors.keys():
 		for i in range(firstLayer):
 			for y in range(len(imageVectors[k])):
